@@ -74,6 +74,10 @@ public class CategoryFeed extends BaseRestFeed {
         category.put("id", item.getRepositoryId());
         category.put("name", item.getItemDisplayName());
         category.put("seoUrlToken", seoUrlToken);
+        String onSaleUrl = (String) item.getPropertyValue("onSaleUrl");
+        if(StringUtils.isNotEmpty(onSaleUrl)) {
+            category.put("onSaleUrl", onSaleUrl);
+        }
         boolean isRuleBased = RuleBasedCategoryProperty.ITEM_DESCRIPTOR.equals(item.getItemDescriptor().getItemDescriptorName());
         category.put("isRuleBased", isRuleBased);
         if(isRuleBased) {

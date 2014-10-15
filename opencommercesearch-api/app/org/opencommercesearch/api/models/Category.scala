@@ -50,6 +50,7 @@ case class Category (
   @JsonProperty("name") var name: Option[String] = None,
   @JsonProperty("alias") var alias: Option[String] = None,
   @JsonProperty("seoUrlToken") var seoUrlToken: Option[String] = None,
+  @JsonProperty("onSaleUrl") var onSaleUrl: Option[String] = None,
   @JsonProperty("isRuleBased") var isRuleBased: Option[Boolean] = None,
   @JsonProperty("ruleFilters") var ruleFilters: Option[Seq[String]] = None,
   @JsonProperty("sites") var sites: Option[Seq[String]] = None,
@@ -112,6 +113,10 @@ object Category {
 
     if(isCopyField("seoUrlToken")) {
       copy.seoUrlToken = category.seoUrlToken
+    }
+
+    if(isCopyField("onSaleUrl")) {
+      copy.onSaleUrl = category.onSaleUrl
     }
 
     if(isCopyField("isRuleBased")) {
@@ -198,6 +203,7 @@ object Category {
     (__ \ "name").readNullable[String] ~
     (__ \ "alias").readNullable[String] ~
     (__ \ "seoUrlToken").readNullable[String] ~
+    (__ \ "onSaleUrl").readNullable[String] ~
     (__ \ "isRuleBased").readNullable[Boolean] ~
     (__ \ "ruleFilters").readNullable[Seq[String]] ~
     (__ \ "sites").readNullable[Seq[String]] ~
@@ -211,6 +217,7 @@ object Category {
     (__ \ "name").writeNullable[String] ~
     (__ \ "alias").writeNullable[String] ~
     (__ \ "seoUrlToken").writeNullable[String] ~
+    (__ \ "onSaleUrl").writeNullable[String] ~
     (__ \ "isRuleBased").writeNullable[Boolean] ~
     (__ \ "ruleFilters").writeNullable[Seq[String]] ~
     (__ \ "sites").writeNullable[Seq[String]] ~

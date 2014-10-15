@@ -42,6 +42,7 @@ public class Category {
   private String url;
   private boolean isRuleBased;
   private Set<String> sites;
+  private String onSaleUrl;
 
   public Category() {}
 
@@ -113,4 +114,13 @@ public class Category {
   public void setSites(Set<String> sites) {
     this.sites = sites;
   }
+
+  public String getOnSaleUrl() {
+    return onSaleUrl;
+  }
+
+  public void setOnSaleUrl(String onSaleUrl) {
+    this.onSaleUrl = onSaleUrl;
+  }
+
 }
